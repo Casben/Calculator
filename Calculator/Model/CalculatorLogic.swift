@@ -9,9 +9,9 @@ import Foundation
 
 struct CalculatorLogic {
     
-    private var number: Double?
+    var number: Double?
     
-    private var intermediateCalculation: (numberOne: Double, calcMethod: String)?
+    var intermediateCalculation: (numberOne: Double, calcMethod: String)?
     
     mutating func setNumber(_ number: Double) {
         self.number = number
