@@ -91,6 +91,15 @@ class CalculatorLogicTests: XCTestCase {
         
         XCTAssert(flippedNumber == -56248)
     }
+    
+    func testDecimalSupport() {
+        var calcLogic = CalculatorLogic()
+        calcLogic.number = 5.5
+        calcLogic.intermediateCalculation = (3.7, "+")
+        
+        let decimalAdditionResult = calcLogic.calculate(symbol: "=")
+        XCTAssert(decimalAdditionResult == 9.2)
+    }
 
 }
 
