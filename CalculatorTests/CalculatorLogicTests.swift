@@ -25,80 +25,57 @@ class CalculatorLogicTests: XCTestCase {
     }
     
     func testAddition() {
-        var calcLogic = CalculatorLogic()
-        calcLogic.number = 1
-        calcLogic.intermediateCalculation = (3, "+")
+        sut.number = 1
+        sut.intermediateCalculation = (3, "+")
         
-        let addtionResult = calcLogic.calculate(symbol: "=")
-        
-        XCTAssert(addtionResult == 4)
+        XCTAssert(sut.calculate(symbol: "=") == 4)
     }
     
     func testSubtraction() {
-        var calcLogic = CalculatorLogic()
-        calcLogic.number = 1
-        calcLogic.intermediateCalculation = (4, "-")
+        sut.number = 1
+        sut.intermediateCalculation = (4, "-")
         
-        let subtractionResult = calcLogic.calculate(symbol: "=")
-        
-        XCTAssert(subtractionResult == 3)
+        XCTAssert(sut.calculate(symbol: "=") == 3)
     }
     
     func testMultiplication() {
-        var calcLogic = CalculatorLogic()
-        calcLogic.number = 5
-        calcLogic.intermediateCalculation = (4, "×")
+        sut.number = 5
+        sut.intermediateCalculation = (4, "×")
         
-        let multiplicationResult = calcLogic.calculate(symbol: "=")
-        
-        XCTAssert(multiplicationResult == 20)
+        XCTAssert(sut.calculate(symbol: "=") == 20)
     }
     
     func testDivision() {
-        var calcLogic = CalculatorLogic()
-        calcLogic.number = 5
-        calcLogic.intermediateCalculation = (20, "÷")
+        sut.number = 5
+        sut.intermediateCalculation = (20, "÷")
         
-        let divisionResult = calcLogic.calculate(symbol: "=")
-        
-        XCTAssert(divisionResult == 4)
+        XCTAssert(sut.calculate(symbol: "=") == 4)
     }
     
     func testDivsion_WithRemainder() {
-        var calcLogic = CalculatorLogic()
-        calcLogic.number = 6
-        calcLogic.intermediateCalculation = (21, "÷")
+        sut.number = 6
+        sut.intermediateCalculation = (21, "÷")
         
-        let remainderResult = calcLogic.calculate(symbol: "=")
-        
-        XCTAssert(remainderResult == 3.5)
+        XCTAssert(sut.calculate(symbol: "=") == 3.5)
     }
     
     func testPercentConversion() {
-        var calcLogic = CalculatorLogic()
-        calcLogic.number = 60
+        sut.number = 60
         
-        let percentResult = calcLogic.calculate(symbol: "%")
-        
-        XCTAssert(percentResult == 0.6)
+        XCTAssert(sut.calculate(symbol: "%") == 0.6)
     }
     
     func testConvertNumber_PositiveOrNegative() {
-        var calcLogic = CalculatorLogic()
-        calcLogic.number = 56248
+        sut.number = 56248
         
-        let flippedNumber = calcLogic.calculate(symbol: "+/-")
-        
-        XCTAssert(flippedNumber == -56248)
+        XCTAssert(sut.calculate(symbol: "+/-") == -56248)
     }
     
     func testDecimalSupport() {
-        var calcLogic = CalculatorLogic()
-        calcLogic.number = 5.5
-        calcLogic.intermediateCalculation = (3.7, "+")
+        sut.number = 5.5
+        sut.intermediateCalculation = (3.7, "+")
         
-        let decimalAdditionResult = calcLogic.calculate(symbol: "=")
-        XCTAssert(decimalAdditionResult == 9.2)
+        XCTAssert(sut.calculate(symbol: "=") == 9.2)
     }
 
 }
