@@ -11,8 +11,6 @@ import XCTest
 class CalculatorLogicTests: XCTestCase {
     
     var sut: CalculatorLogic!
-
-    // sut = System Under Test
     
     override func setUp() {
         super.setUp()
